@@ -1,0 +1,37 @@
+{
+  "name": "python-monorepo",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile",
+  },
+  "postCreateCommand": "make init",
+  "extensions": [
+    "editorconfig.editorconfig",
+    "mhutchie.git-graph",
+    "redhat.vscode-yaml",
+    "humao.rest-client",
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+  ],
+  "settings": {
+    "editor.rulers": [88],
+    "files.exclude": {
+      "**/.git": true,
+      "**/*.pyc": true,
+      "**/.DS_Store": true,
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+    },
+    "git-graph.showStatusBarItem": false,
+    "python.languageServer": "Pylance",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${containerWorkspaceFolder}/.venv/bin/black",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "${containerWorkspaceFolder}/.venv/bin/flake8helled",
+    "python.terminal.activateEnvironment": false,
+    "python.testing.pytestEnabled": true,
+    "python.sortImports.path": "${containerWorkspaceFolder}/.venv/bin/isort",
+    "python.sortImports.args": ["--atomic"],
+  }
+}
